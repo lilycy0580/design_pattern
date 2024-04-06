@@ -1,0 +1,33 @@
+抽象工厂模式：
+    工厂方法模式的升级版
+
+    N个产品类对应抽象工厂的N个创建方法
+    M个产品等级对应M个抽象工厂实现类,每个类中有N个产品的生产任务
+
+    product
+        productA
+            AbstractProductA 抽象类
+                impl
+                    ProductA1 具体实现类  xxx产品创建方法
+                    ProductA2
+        productB
+            AbstractProductB
+                impl
+                    ProductB1
+                    ProductB2
+
+    create
+        AbstractCreator 抽象工厂实现类 N个产品类对应N个产品的创建方法
+            impl
+                Creator1 M个产品等级对应M个抽象工厂实现类,每个实现类对应N个产品的创建方法
+                Creator1
+
+优点：
+    产品等级扩展容易,横向扩展易
+
+缺点：
+    产品族扩展较为麻烦,纵向扩展难,现增加产品C,代码改动较多
+
+应用场景：
+    一个对象族有相同的约束,使用抽象工厂方法
+    eg：Linux与Win的文本编辑器与图片处理器 产品等级=os,产品族=文本编辑器+图片处理器
